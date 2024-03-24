@@ -30,7 +30,7 @@ public class City {
 		City[] city = new City[s.size()];
 		//输入距离
 		for(int m = 0;m< s.size();m++){
-			//为每个数组实例化
+			//为每个city对象实例化
 			city[m] = new City();
 			for(int i = 0;i < 3;i++) {
 				//为city的hash表赋值
