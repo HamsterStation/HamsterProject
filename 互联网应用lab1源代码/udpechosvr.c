@@ -41,7 +41,8 @@ int main(int argc, char* argv[]) {
             (struct sockaddr*)&echoClntAddr, &cliAddrLen)) < 0)
             printf("recvfrom() failed.\n");
         echoBuffer[recvMsgSize] = '\0';
-        printf("Handling client %s port:%hd\n", inet_ntoa(echoClntAddr.sin_addr), echoServPort);
+        printf("Handling client %s port:%hd\n", inet_ntoa(echoClntAddr.sin_addr), ntohs(echoClntAddr.sin_port));
+
         printf("Received(from client): %s\n", echoBuffer);
 
         if (sendto(sock, echoBuffer, recvMsgSize, 0,
